@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, './client/build')));
 
 app.get('/api/test', (req, res) => {
   console.log('api/users called!')
-  res.json([1, 2]);
+  res.json("API: I'm 25!");
 });
 
 app.get('/', (req,res) => {

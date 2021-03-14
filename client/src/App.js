@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       const fetchedData = (await axios.get('/api/test')).data;
-      setData(fetchData);
+      setData(fetchedData);
     }
     fetchData();
   }, []);
@@ -19,7 +19,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World!</h1>
-        {data}
+        <p>{data}</p>
       </header>
     </div>
   );
