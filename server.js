@@ -21,6 +21,10 @@ app.get('/', (req,res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
+app.get('/.well-known/acme-challenge/jVX7eJet2fV3Jj4wWVNig1fXn5lNCSz7VUkLqhAM0as', (req,res) => {
+  res.sendFile(path.join(__dirname, './client/.well-known/acme-challenge/jVX7eJet2fV3Jj4wWVNig1fXn5lNCSz7VUkLqhAM0as'));
+});
+
 app.listen(port, () => {
     console.log(`Server listening on the port::${port}`);
 });
