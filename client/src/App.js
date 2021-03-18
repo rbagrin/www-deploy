@@ -1,27 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import axios from 'axios';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './Home';
+import DomainVerification from './DomainVerification';
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      const fetchedData = (await axios.get('/api/test')).data;
-      setData(fetchedData);
-    }
-    fetchData();
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello World!</h1>
-        <p>{data}</p>
-      </header>
-    </div>
+    <Router>
+        <Switch>
+          <Route path="/.well-known/acme-challenge/6D94L5iYDuGgNmb0PEPODYBP6U2bLDUhLJu-EWozTY8">
+            <DomainVerification />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 
