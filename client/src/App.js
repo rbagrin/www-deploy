@@ -6,18 +6,14 @@ import {
   Link
 } from "react-router-dom";
 import Home from './Home';
-import DomainVerification from './DomainVerification';
+import About from './About';
 
 function App() {
   return (
     <Router>
         <Switch>
-          <Route path="/.well-known/acme-challenge/6D94L5iYDuGgNmb0PEPODYBP6U2bLDUhLJu-EWozTY8">
-            <DomainVerification />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/about" component={About} />
+          <Route path="/" component={Home} />
         </Switch>
     </Router>
   );
