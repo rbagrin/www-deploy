@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../../logo.svg';
+import '../../App.css';
 import axios from 'axios';
+import Header from '../../components/header';
 
 function Home() {
   const [data, setData] = useState(null);
@@ -16,6 +17,7 @@ function Home() {
 
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello World!</h1>
